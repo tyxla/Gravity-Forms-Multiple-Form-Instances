@@ -3,9 +3,9 @@ Gravity Forms: Multiple Form Instances
 
 #### Version 1.0
 
-Gravity Forms: Multiple Form Instances is a small plugin for WordPress.
+**Gravity Forms: Multiple Form Instances** is a small plugin for WordPress.
 
-Used in conjunction with the awesome Gravity Forms plugin - http://www.gravityforms.com/.
+Used in conjunction with the awesome [Gravity Forms](http://www.gravityforms.com/) plugin.
 
 Allows multiple instances of the same form to be displayed on a single page when using AJAX.
 
