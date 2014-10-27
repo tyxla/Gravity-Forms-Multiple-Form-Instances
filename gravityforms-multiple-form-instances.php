@@ -14,9 +14,9 @@ class Gravity_Forms_Multiple_Forms_Instances {
     /**
 	 * Constructor.
 	 *	
-     * Used to initialize the plugin.
-     *
-     * @access public
+	 * Used to initialize the plugin.
+	 *
+	 * @access public
      */
 	function __construct() {
 		// hook the HTML ID string find & replace functionality
