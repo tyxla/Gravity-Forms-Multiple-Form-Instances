@@ -9,7 +9,7 @@
 /**
  * The main plugin class.
  */
-class Gravity_Forms_Multiple_Forms_Instances {
+class Gravity_Forms_Multiple_Form_Instances {
 
 	/**
 	 * Constructor.
@@ -80,5 +80,5 @@ class Gravity_Forms_Multiple_Forms_Instances {
 }
 
 // initialize the plugin
-global $gravity_forms_multiple_forms_instances;
-$gravity_forms_multiple_forms_instances = new Gravity_Forms_Multiple_Forms_Instances();
+global $gravity_forms_multiple_form_instances;
+$gravity_forms_multiple_form_instances = new Gravity_Forms_Multiple_Form_Instances();	
