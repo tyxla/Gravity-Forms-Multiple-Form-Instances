@@ -14,7 +14,7 @@ class Gravity_Forms_Multiple_Form_Instances {
 	/**
 	 * Constructor.
 	 *	
-	 * Used to initialize the plugin.
+	 * Used to initialize the plugin and hook the related functionality.
 	 *
 	 * @access public
 	 */
@@ -35,7 +35,7 @@ class Gravity_Forms_Multiple_Form_Instances {
 	 * @return string $form_string The modified form HTML string.
 	 */
 	function gform_get_form_filter($form_string, $form) {
-		// if form has been submitted, use the submitted ID, otherwise generate unique ID
+		// if form has been submitted, use the submitted ID, otherwise generate a new unique ID
 		if (isset($_POST['gform_random_id'])) {
 			$random_id = $_POST['gform_random_id'];
 		} else {
