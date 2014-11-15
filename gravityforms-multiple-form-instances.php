@@ -69,6 +69,9 @@ class Gravity_Forms_Multiple_Form_Instances {
 			$hidden_field 											=> $hidden_field . "<input type='hidden' name='gform_random_id' value='" . $random_id . "' />",
 		);
 
+		// allow addons & plugins to add additional find & replace strings
+		$strings = apply_filters('gform_multiple_instances_strings', $strings);
+
 		// replace all occurences with the new unique ID
 		foreach ($strings as $find => $replace) {
 			$form_string = str_replace($find, $replace, $form_string);
