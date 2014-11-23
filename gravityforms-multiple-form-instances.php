@@ -2,6 +2,8 @@
 /**
  * Plugin Name: Gravity Forms: Multiple Form Instances
  * Description: Allows multiple instances of the same form to be run on a single page when using AJAX.
+ * Author: tyxla
+ * Author URI: https://github.com/tyxla
  * Version: 1.0.1
  * License: GPL2
  */
