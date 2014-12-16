@@ -1,22 +1,40 @@
-Gravity Forms: Multiple Form Instances
-=====================================
+=== Gravity Forms: Multiple Form Instances ===
+Contributors: tyxla
+Tags: gravity, form, multiple, gravity forms
+Requires at least: 3.0.1
+Tested up to: 4.0.1
+Stable tag: 1.0.2
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-### Version 1.0.1
+Allows multiple instances of the same form to be run on a single page when using AJAX.
 
------
+== Description ==
 
-#### About
+Gravity Forms: Multiple Form Instances is used in conjunction with the awesome Gravity Forms plugin.
 
-**Gravity Forms: Multiple Form Instances** is a small plugin for WordPress.
+Usually, when you use multiple Gravity Forms with AJAX enabled on the same page, this causes issues with multiple form submission & error display, infinite loading and other issues.
 
-Used in conjunction with the awesome [Gravity Forms](http://www.gravityforms.com/) plugin.
+This plugin addresses this issue, allowing multiple forms to be displayed on the same page without any issues.
 
-Allows multiple instances of the same form to be displayed on a single page when using AJAX.
+== Installation ==
 
------
+1. Install Gravity Forms: Multiple Form Instances either via the WordPress.org plugin directory, or by uploading the files to your server.
+1. Activate the plugin.
+1. That's it. You're ready to go!
 
-#### Installation & Configuration
+== Changelog ==
 
-This plugin does not need any customization. 
+= 1.0.2 =
+The plugin now handles the following instances when they have the same values in different forms:
 
-Simply install and activate it, and it will do its magic with your Gravity Forms.
+* checkboxes & radio buttons - ID attribute of choice inputs
+* checkboxes & radio buttons - for attribute of their choice labels
+* checkboxes & radio buttons - ID attribute of their choice labels
+
+= 1.0.1 =
+* Added a filter for modifying the find & replace strings.
+* Updated readme.
+
+= 1.0 =
+Initial version.
