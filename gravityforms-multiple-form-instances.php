@@ -49,29 +49,29 @@ class Gravity_Forms_Multiple_Form_Instances {
 
 		// define all occurences of the original form ID that wont hurt the form input
 		$strings = array(
-			"for='choice_"											=> "for='choice_" . $random_id . "_",
-			"id='choice_"											=> "id='choice_" . $random_id . "_",
-			"id='label_"											=> "id='label_" . $random_id . "_",
-			"'gform_wrapper_" . $form['id'] . "'" 					=> "'gform_wrapper_" . $random_id . "'",
-			"'gf_" . $form['id'] . "'" 								=> "'gf_" . $random_id . "'",
-			"'gform_" . $form['id'] . "'" 							=> "'gform_" . $random_id . "'",
-			"'gform_ajax_frame_" . $form['id'] . "'" 				=> "'gform_ajax_frame_" . $random_id . "'",
-			"#gf_" . $form['id'] . "'" 								=> "#gf_" . $random_id . "'",
-			"'gform_fields_" . $form['id'] . "'" 					=> "'gform_fields_" . $random_id . "'",
-			"id='field_" . $form['id'] . "_" 						=> "id='field_" . $random_id . "_",
-			"for='input_" . $form['id'] . "_" 						=> "for='input_" . $random_id . "_",
-			"id='input_" . $form['id'] . "_" 						=> "id='input_" . $random_id . "_",
-			"'gform_submit_button_" . $form['id'] . "'" 			=> "'gform_submit_button_" . $random_id . "'",
-			'"gf_submitting_' . $form['id'] . '"' 					=> '"gf_submitting_' . $random_id . '"',
-			"'gf_submitting_" . $form['id'] . "'" 					=> "'gf_submitting_" . $random_id . "'",
-			"#gform_ajax_frame_" . $form['id'] 						=> "#gform_ajax_frame_" . $random_id,
-			"#gform_wrapper_" . $form['id'] 						=> "#gform_wrapper_" . $random_id,
-			"#gform_" . $form['id'] 								=> "#gform_" . $random_id,
-			"trigger('gform_post_render', [" . $form['id'] 			=> "trigger('gform_post_render', [" . $random_id,
-			"gformInitSpinner( " . $form['id'] . "," 				=> "gformInitSpinner( " . $random_id . ",",
-			"trigger('gform_page_loaded', [" . $form['id'] 			=> "trigger('gform_page_loaded', [" . $random_id,
-			"'gform_confirmation_loaded', [" . $form['id'] . "]" 	=> "'gform_confirmation_loaded', [" . $random_id . "]",
-			$hidden_field 											=> $hidden_field . "<input type='hidden' name='gform_random_id' value='" . $random_id . "' />",
+			"for='choice_"                                       => "for='choice_" . $random_id . "_",
+			"id='choice_"                                        => "id='choice_" . $random_id . "_",
+			"id='label_"                                         => "id='label_" . $random_id . "_",
+			"'gform_wrapper_" . $form['id'] . "'"                => "'gform_wrapper_" . $random_id . "'",
+			"'gf_" . $form['id'] . "'"                           => "'gf_" . $random_id . "'",
+			"'gform_" . $form['id'] . "'"                        => "'gform_" . $random_id . "'",
+			"'gform_ajax_frame_" . $form['id'] . "'"             => "'gform_ajax_frame_" . $random_id . "'",
+			"#gf_" . $form['id'] . "'"                           => "#gf_" . $random_id . "'",
+			"'gform_fields_" . $form['id'] . "'"                 => "'gform_fields_" . $random_id . "'",
+			"id='field_" . $form['id'] . "_"                     => "id='field_" . $random_id . "_",
+			"for='input_" . $form['id'] . "_"                    => "for='input_" . $random_id . "_",
+			"id='input_" . $form['id'] . "_"                     => "id='input_" . $random_id . "_",
+			"'gform_submit_button_" . $form['id'] . "'"          => "'gform_submit_button_" . $random_id . "'",
+			'"gf_submitting_' . $form['id'] . '"'                => '"gf_submitting_' . $random_id . '"',
+			"'gf_submitting_" . $form['id'] . "'"                => "'gf_submitting_" . $random_id . "'",
+			"#gform_ajax_frame_" . $form['id']                   => "#gform_ajax_frame_" . $random_id,
+			"#gform_wrapper_" . $form['id']                      => "#gform_wrapper_" . $random_id,
+			"#gform_" . $form['id']                              => "#gform_" . $random_id,
+			"trigger('gform_post_render', [" . $form['id']       => "trigger('gform_post_render', [" . $random_id,
+			"gformInitSpinner( " . $form['id'] . ","             => "gformInitSpinner( " . $random_id . ",",
+			"trigger('gform_page_loaded', [" . $form['id']       => "trigger('gform_page_loaded', [" . $random_id,
+			"'gform_confirmation_loaded', [" . $form['id'] . "]" => "'gform_confirmation_loaded', [" . $random_id . "]",
+			$hidden_field                                        => $hidden_field . "<input type='hidden' name='gform_random_id' value='" . $random_id . "' />",
 		);
 
 		// allow addons & plugins to add additional find & replace strings
@@ -89,4 +89,4 @@ class Gravity_Forms_Multiple_Form_Instances {
 
 // initialize the plugin
 global $gravity_forms_multiple_form_instances;
-$gravity_forms_multiple_form_instances = new Gravity_Forms_Multiple_Form_Instances();	
+$gravity_forms_multiple_form_instances = new Gravity_Forms_Multiple_Form_Instances();
