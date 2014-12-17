@@ -4,7 +4,7 @@
  * Description: Allows multiple instances of the same form to be run on a single page when using AJAX.
  * Author: tyxla
  * Author URI: https://github.com/tyxla
- * Version: 1.0.2
+ * Version: 1.0.3
  * License: GPL2
  */
 
