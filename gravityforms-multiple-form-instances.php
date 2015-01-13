@@ -1,11 +1,14 @@
 <?php
 /**
  * Plugin Name: Gravity Forms: Multiple Form Instances
+ * Plugin URI: https://wordpress.org/plugins/gravity-forms-multiple-form-instances/
  * Description: Allows multiple instances of the same form to be run on a single page when using AJAX.
  * Author: tyxla
  * Author URI: https://github.com/tyxla
  * Version: 1.0.3
  * License: GPL2
+ * Requires at least: 3.0.1
+ * Tested up to: 4.1
  */
 
 /**
