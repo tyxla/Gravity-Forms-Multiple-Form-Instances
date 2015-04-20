@@ -8,7 +8,7 @@
  * Version: 1.0.3
  * License: GPL2
  * Requires at least: 3.0.1
- * Tested up to: 4.1
+ * Tested up to: 4.2
  */
 
 /**
