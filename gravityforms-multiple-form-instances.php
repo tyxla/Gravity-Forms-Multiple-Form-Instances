@@ -5,7 +5,7 @@
  * Description: Allows multiple instances of the same form to be run on a single page when using AJAX.
  * Author: tyxla
  * Author URI: https://github.com/tyxla
- * Version: 1.0.4
+ * Version: 1.0.5
  * License: GPL2
  * Requires at least: 3.0.1
  * Tested up to: 4.2.2
@@ -81,6 +81,7 @@ class Gravity_Forms_Multiple_Form_Instances {
 			'if(formId == ' . $form['id'] . ')'									=> 'if(formId == ' . $random_id . ')',
 			"window['gf_form_conditional_logic'][" . $form['id'] . "]"			=> "window['gf_form_conditional_logic'][" . $random_id . "]",
 			"trigger('gform_post_conditional_logic', [" . $form['id'] . ","		=> "trigger('gform_post_conditional_logic', [" . $random_id . ",",
+			'gformShowPasswordStrength("input_' . $form['id'] . '_'				=> 'gformShowPasswordStrength("input_' . $random_id . '_',
 			$hidden_field                                        				=> $hidden_field . "<input type='hidden' name='gform_random_id' value='" . $random_id . "' />",
 		);
 
