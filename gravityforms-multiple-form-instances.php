@@ -82,6 +82,7 @@ class Gravity_Forms_Multiple_Form_Instances {
 			"window['gf_form_conditional_logic'][" . $form['id'] . "]"			=> "window['gf_form_conditional_logic'][" . $random_id . "]",
 			"trigger('gform_post_conditional_logic', [" . $form['id'] . ","		=> "trigger('gform_post_conditional_logic', [" . $random_id . ",",
 			'gformShowPasswordStrength("input_' . $form['id'] . '_'				=> 'gformShowPasswordStrength("input_' . $random_id . '_',
+			"gformInitChosenFields('#input_" . $form['id'] . "_"				=> "gformInitChosenFields('#input_" . $random_id . "_",
 			$hidden_field                                        				=> $hidden_field . "<input type='hidden' name='gform_random_id' value='" . $random_id . "' />",
 		);
 
