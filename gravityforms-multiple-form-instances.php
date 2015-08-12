@@ -5,7 +5,7 @@
  * Description: Allows multiple instances of the same form to be run on a single page when using AJAX.
  * Author: tyxla
  * Author URI: https://github.com/tyxla
- * Version: 1.0.7
+ * Version: 1.0.8
  * License: GPL2
  * Requires at least: 3.0.1
  * Tested up to: 4.3
@@ -48,7 +48,7 @@ class Gravity_Forms_Multiple_Form_Instances {
 		}
 
 		// this is where we keep our unique ID
-		$hidden_field = "<input type='hidden' name='gform_field_values' value='' />";
+		$hidden_field = "<input type='hidden' name='gform_field_values'";
 
 		// define all occurences of the original form ID that wont hurt the form input
 		$strings = array(
@@ -83,7 +83,7 @@ class Gravity_Forms_Multiple_Form_Instances {
 			"trigger('gform_post_conditional_logic', [" . $form['id'] . ","		=> "trigger('gform_post_conditional_logic', [" . $random_id . ",",
 			'gformShowPasswordStrength("input_' . $form['id'] . '_'				=> 'gformShowPasswordStrength("input_' . $random_id . '_',
 			"gformInitChosenFields('#input_" . $form['id'] . "_"				=> "gformInitChosenFields('#input_" . $random_id . "_",
-			$hidden_field                                        				=> $hidden_field . "<input type='hidden' name='gform_random_id' value='" . $random_id . "' />",
+			$hidden_field                                        				=> "<input type='hidden' name='gform_random_id' value='" . $random_id . "' />" . $hidden_field,
 		);
 
 		// allow addons & plugins to add additional find & replace strings
