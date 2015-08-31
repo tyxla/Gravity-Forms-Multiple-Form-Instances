@@ -3,7 +3,7 @@ Contributors: tyxla
 Tags: gravity, form, multiple, gravity forms
 Requires at least: 3.0.1
 Tested up to: 4.3
-Stable tag: 1.0.8
+Stable tag: 1.0.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -24,6 +24,9 @@ This plugin addresses this issue, allowing multiple forms to be displayed on the
 1. That's it. You're ready to go!
 
 == Changelog ==
+
+= 1.0.9 =
+Now properly supporting maximum characters limit.
 
 = 1.0.8 =
 Now properly supporting `gform_field_values`.
