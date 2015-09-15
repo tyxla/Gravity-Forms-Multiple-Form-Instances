@@ -5,10 +5,10 @@
  * Description: Allows multiple instances of the same form to be run on a single page when using AJAX.
  * Author: tyxla
  * Author URI: https://github.com/tyxla
- * Version: 1.0.9
+ * Version: 1.0.10
  * License: GPL2
  * Requires at least: 3.0.1
- * Tested up to: 4.3
+ * Tested up to: 4.3.1
  */
 
 /**
@@ -84,6 +84,7 @@ class Gravity_Forms_Multiple_Form_Instances {
 			'gformShowPasswordStrength("input_' . $form['id'] . '_'				=> 'gformShowPasswordStrength("input_' . $random_id . '_',
 			"gformInitChosenFields('#input_" . $form['id'] . "_"				=> "gformInitChosenFields('#input_" . $random_id . "_",
 			"jQuery('#input_" . $form['id'] . "_"				 				=> "jQuery('#input_" . $random_id . "_",
+			'gforms_calendar_icon_input_' . $form['id'] . '_' 	 				=> 'gforms_calendar_icon_input_' . $random_id . '_',
 			$hidden_field                                        				=> "<input type='hidden' name='gform_random_id' value='" . $random_id . "' />" . $hidden_field,
 		);
 
