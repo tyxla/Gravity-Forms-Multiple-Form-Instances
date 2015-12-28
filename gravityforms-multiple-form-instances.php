@@ -5,7 +5,7 @@
  * Author: tyxla
  * Author URI: http://marinatanasov.com/
  * Plugin URI: https://github.com/tyxla/Gravity-Forms-Multiple-Form-Instances
- * Version: 1.0.11
+ * Version: 1.0.12
  * License: GPL2
  * Requires at least: 3.0.1
  * Tested up to: 4.4
@@ -42,7 +42,7 @@ class Gravity_Forms_Multiple_Form_Instances {
 	function gform_get_form_filter($form_string, $form) {
 		// if form has been submitted, use the submitted ID, otherwise generate a new unique ID
 		if (isset($_POST['gform_random_id'])) {
-			$random_id = $_POST['gform_random_id'];
+			$random_id = absint( $_POST['gform_random_id'] );
 		} else {
 			$random_id = mt_rand();	
 		}

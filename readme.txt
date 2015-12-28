@@ -3,7 +3,7 @@ Contributors: tyxla
 Tags: gravity, form, multiple, gravity forms
 Requires at least: 3.0.1
 Tested up to: 4.4
-Stable tag: 1.0.11
+Stable tag: 1.0.12
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -24,6 +24,9 @@ This plugin addresses this issue, allowing multiple forms to be displayed on the
 1. That's it. You're ready to go!
 
 == Changelog ==
+
+= 1.0.12 =
+Properly sanitizing the random form ID. Props @swissspidy.
 
 = 1.0.11 =
 Tested with WordPress 4.4.
