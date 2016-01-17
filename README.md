@@ -1,7 +1,7 @@
 Gravity Forms: Multiple Form Instances
 =====================================
 
-### Version 1.0.12
+### Version 1.0.13
 
 -----
 

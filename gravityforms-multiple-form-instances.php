@@ -5,10 +5,10 @@
  * Author: tyxla
  * Author URI: http://marinatanasov.com/
  * Plugin URI: https://github.com/tyxla/Gravity-Forms-Multiple-Form-Instances
- * Version: 1.0.12
+ * Version: 1.0.13
  * License: GPL2
  * Requires at least: 3.0.1
- * Tested up to: 4.4
+ * Tested up to: 4.4.1
  */
 
 /**
