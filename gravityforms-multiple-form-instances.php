@@ -85,6 +85,10 @@ class Gravity_Forms_Multiple_Form_Instances {
 			"gformInitChosenFields('#input_" . $form['id'] . "_"				=> "gformInitChosenFields('#input_" . $random_id . "_",
 			"jQuery('#input_" . $form['id'] . "_"				 				=> "jQuery('#input_" . $random_id . "_",
 			'gforms_calendar_icon_input_' . $form['id'] . '_' 	 				=> 'gforms_calendar_icon_input_' . $random_id . '_',
+			"id='ginput_base_price_" . $form['id'] . "_"                        => "id='ginput_base_price_" . $random_id . "_",
+			"id='ginput_quantity_" . $form['id'] . "_"                          => "id='ginput_quantity_" . $random_id . "_",
+			"GFCalc(" . $form['id'] . ","                                       => "GFCalc(" . $random_id . ",",
+			'gf_global["number_formats"][' . $form['id'] . ']'                  => 'gf_global["number_formats"][' . $random_id . ']',
 			$hidden_field                                        				=> "<input type='hidden' name='gform_random_id' value='" . $random_id . "' />" . $hidden_field,
 		);
 
