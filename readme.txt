@@ -3,7 +3,7 @@ Contributors: tyxla
 Tags: gravity, form, multiple, gravity forms
 Requires at least: 3.0.1
 Tested up to: 4.4.1
-Stable tag: 1.0.13
+Stable tag: 1.0.14
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -24,6 +24,9 @@ This plugin addresses this issue, allowing multiple forms to be displayed on the
 1. That's it. You're ready to go!
 
 == Changelog ==
+
+= 1.0.14 =
+Added support for all product field types.
 
 = 1.0.13 =
 Added support for Product field with Calculation field type.
