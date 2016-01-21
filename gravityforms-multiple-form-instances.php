@@ -93,6 +93,7 @@ class Gravity_Forms_Multiple_Form_Instances {
 			"ginput_total_" . $form['id']                                       => "ginput_total_" . $random_id,
 			"GFCalc(" . $form['id'] . ","                                       => "GFCalc(" . $random_id . ",",
 			'gf_global["number_formats"][' . $form['id'] . ']'                  => 'gf_global["number_formats"][' . $random_id . ']',
+			"gform_next_button_" . $form['id'] . "_"                            => "gform_next_button_" . $random_id . "_",
 			$hidden_field                                                       => "<input type='hidden' name='gform_random_id' value='" . $random_id . "' />" . $hidden_field,
 		);
 
