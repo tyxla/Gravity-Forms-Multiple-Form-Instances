@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="./tests/bootstrap.php" colors="true" stopOnError="true">
+	<testsuites>
+		<testsuite name="Gravity Forms: Multiple Form Instances - Test Suite">
+			<directory suffix=".php">./tests/unit-tests/</directory>
+		</testsuite>
+	</testsuites>
+	<filter>
+		<blacklist>
+			<directory suffix=".php">./tests/</directory>
+			<directory suffix=".php">./tmp/</directory>
+		</blacklist>
+	</filter>
+</phpunit>
