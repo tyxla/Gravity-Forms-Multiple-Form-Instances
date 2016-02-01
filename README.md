@@ -1,4 +1,6 @@
-# Gravity Forms: Multiple Form Instances [![Build Status](https://travis-ci.org/tyxla/Gravity-Forms-Multiple-Form-Instances.svg?branch=master)](https://travis-ci.org/tyxla/Gravity-Forms-Multiple-Form-Instances) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/tyxla/Gravity-Forms-Multiple-Form-Instances/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/tyxla/Gravity-Forms-Multiple-Form-Instances/?branch=master) [![Code Coverage](https://scrutinizer-ci.com/g/tyxla/Gravity-Forms-Multiple-Form-Instances/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/tyxla/Gravity-Forms-Multiple-Form-Instances/?branch=master)
+# Gravity Forms: Multiple Form Instances
+
+[![Build Status](https://travis-ci.org/tyxla/Gravity-Forms-Multiple-Form-Instances.svg?branch=master)](https://travis-ci.org/tyxla/Gravity-Forms-Multiple-Form-Instances) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/tyxla/Gravity-Forms-Multiple-Form-Instances/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/tyxla/Gravity-Forms-Multiple-Form-Instances/?branch=master) [![Code Coverage](https://scrutinizer-ci.com/g/tyxla/Gravity-Forms-Multiple-Form-Instances/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/tyxla/Gravity-Forms-Multiple-Form-Instances/?branch=master)
 
 -----
 
