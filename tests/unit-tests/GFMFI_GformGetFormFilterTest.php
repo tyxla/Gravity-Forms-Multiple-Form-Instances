@@ -258,4 +258,59 @@ class GFMFI_GformGetFormFilterTest extends WP_UnitTestCase {
 		$this->assertSame( $expected, $actual );
 	}
 
+	/**
+	 * @covers Gravity_Forms_Multiple_Form_Instances::gform_get_form_filter
+	 */
+	public function testGfApplyRules() {
+		$input = 'gf_apply_rules(' . $this->form['id'] . ',';
+		$expected = 'gf_apply_rules(' . $this->randomId . ',';
+		$actual = $this->gfmfi->gform_get_form_filter( $input, $this->form );
+
+		$this->assertSame( $expected, $actual );
+	}
+
+	/**
+	 * @covers Gravity_Forms_Multiple_Form_Instances::gform_get_form_filter
+	 */
+	public function testGformConfirmationWrapper() {
+		$input = 'gform_confirmation_wrapper_' . $this->form['id'];
+		$expected = 'gform_confirmation_wrapper_' . $this->randomId;
+		$actual = $this->gfmfi->gform_get_form_filter( $input, $this->form );
+
+		$this->assertSame( $expected, $actual );
+	}
+
+	/**
+	 * @covers Gravity_Forms_Multiple_Form_Instances::gform_get_form_filter
+	 */
+	public function testGformsConfirmationMessage() {
+		$input = 'gforms_confirmation_message_' . $this->form['id'];
+		$expected = 'gforms_confirmation_message_' . $this->randomId;
+		$actual = $this->gfmfi->gform_get_form_filter( $input, $this->form );
+
+		$this->assertSame( $expected, $actual );
+	}
+
+	/**
+	 * @covers Gravity_Forms_Multiple_Form_Instances::gform_get_form_filter
+	 */
+	public function testGformConfirmationMessage() {
+		$input = 'gform_confirmation_message_' . $this->form['id'];
+		$expected = 'gform_confirmation_message_' . $this->randomId;
+		$actual = $this->gfmfi->gform_get_form_filter( $input, $this->form );
+
+		$this->assertSame( $expected, $actual );
+	}
+
+	/**
+	 * @covers Gravity_Forms_Multiple_Form_Instances::gform_get_form_filter
+	 */
+	public function testIfFormId() {
+		$input = 'if(formId == ' . $this->form['id'] . ')';
+		$expected = 'if(formId == ' . $this->randomId . ')';
+		$actual = $this->gfmfi->gform_get_form_filter( $input, $this->form );
+
+		$this->assertSame( $expected, $actual );
+	}
+
 }
