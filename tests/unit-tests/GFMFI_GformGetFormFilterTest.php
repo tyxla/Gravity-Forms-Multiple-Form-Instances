@@ -93,4 +93,37 @@ class GFMFI_GformGetFormFilterTest extends WP_UnitTestCase {
 		$this->assertSame( $expected, $actual );
 	}
 
+	/**
+	 * @covers Gravity_Forms_Multiple_Form_Instances::gform_get_form_filter
+	 */
+	public function testHashGfReplacement() {
+		$input = "#gf_" . $this->form['id'] . "'";
+		$expected = "#gf_" . $this->randomId . "'";
+		$actual = $this->gfmfi->gform_get_form_filter( $input, $this->form );
+
+		$this->assertSame( $expected, $actual );
+	}
+
+	/**
+	 * @covers Gravity_Forms_Multiple_Form_Instances::gform_get_form_filter
+	 */
+	public function testGformFieldsReplacement() {
+		$input = "'gform_fields_" . $this->form['id'] . "'";
+		$expected = "'gform_fields_" . $this->randomId . "'";
+		$actual = $this->gfmfi->gform_get_form_filter( $input, $this->form );
+
+		$this->assertSame( $expected, $actual );
+	}
+
+	/**
+	 * @covers Gravity_Forms_Multiple_Form_Instances::gform_get_form_filter
+	 */
+	public function testIdFieldReplacement() {
+		$input = "id='field_" . $this->form['id'] . '_';
+		$expected = "id='field_" . $this->randomId . '_';
+		$actual = $this->gfmfi->gform_get_form_filter( $input, $this->form );
+
+		$this->assertSame( $expected, $actual );
+	}
+
 }
