@@ -76,7 +76,7 @@ class Gravity_Forms_Multiple_Form_Instances {
 			"'gform_confirmation_loaded', [" . $form['id'] . ']'                => "'gform_confirmation_loaded', [" . $random_id . ']',
 			'gf_apply_rules(' . $form['id'] . ','                               => 'gf_apply_rules(' . $random_id . ',',
 			'gform_confirmation_wrapper_' . $form['id']                         => 'gform_confirmation_wrapper_' . $random_id,
-			'gforms_confirmation_message_' . $form['id']                        => 'gform_confirmation_wrapper_' . $random_id,
+			'gforms_confirmation_message_' . $form['id']                        => 'gforms_confirmation_message_' . $random_id,
 			'gform_confirmation_message_' . $form['id']                         => 'gform_confirmation_message_' . $random_id,
 			'if(formId == ' . $form['id'] . ')'                                 => 'if(formId == ' . $random_id . ')',
 			"window['gf_form_conditional_logic'][" . $form['id'] . ']'          => "window['gf_form_conditional_logic'][" . $random_id . ']',
