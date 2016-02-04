@@ -313,4 +313,59 @@ class GFMFI_GformGetFormFilterTest extends WP_UnitTestCase {
 		$this->assertSame( $expected, $actual );
 	}
 
+	/**
+	 * @covers Gravity_Forms_Multiple_Form_Instances::gform_get_form_filter
+	 */
+	public function testWindowGfFormConditionalLogic() {
+		$input = "window['gf_form_conditional_logic'][" . $this->form['id'] . ']';
+		$expected = "window['gf_form_conditional_logic'][" . $this->randomId . ']';
+		$actual = $this->gfmfi->gform_get_form_filter( $input, $this->form );
+
+		$this->assertSame( $expected, $actual );
+	}
+
+	/**
+	 * @covers Gravity_Forms_Multiple_Form_Instances::gform_get_form_filter
+	 */
+	public function testTriggerGformPostConditionalLogic() {
+		$input = "trigger('gform_post_conditional_logic', [" . $this->form['id'] . ',';
+		$expected = "trigger('gform_post_conditional_logic', [" . $this->randomId . ',';
+		$actual = $this->gfmfi->gform_get_form_filter( $input, $this->form );
+
+		$this->assertSame( $expected, $actual );
+	}
+
+	/**
+	 * @covers Gravity_Forms_Multiple_Form_Instances::gform_get_form_filter
+	 */
+	public function testGformShowPasswordStrengthInput() {
+		$input = 'gformShowPasswordStrength("input_' . $this->form['id'] . '_';
+		$expected = 'gformShowPasswordStrength("input_' . $this->randomId . '_';
+		$actual = $this->gfmfi->gform_get_form_filter( $input, $this->form );
+
+		$this->assertSame( $expected, $actual );
+	}
+
+	/**
+	 * @covers Gravity_Forms_Multiple_Form_Instances::gform_get_form_filter
+	 */
+	public function testGformInitChosenFieldsInput() {
+		$input = "gformInitChosenFields('#input_" . $this->form['id'] . '_';
+		$expected = "gformInitChosenFields('#input_" . $this->randomId . '_';
+		$actual = $this->gfmfi->gform_get_form_filter( $input, $this->form );
+
+		$this->assertSame( $expected, $actual );
+	}
+
+	/**
+	 * @covers Gravity_Forms_Multiple_Form_Instances::gform_get_form_filter
+	 */
+	public function testJqueryHashInput() {
+		$input = "jQuery('#input_" . $this->form['id'] . '_';
+		$expected = "jQuery('#input_" . $this->randomId . '_';
+		$actual = $this->gfmfi->gform_get_form_filter( $input, $this->form );
+
+		$this->assertSame( $expected, $actual );
+	}
+
 }
