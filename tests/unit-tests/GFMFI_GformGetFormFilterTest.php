@@ -126,4 +126,59 @@ class GFMFI_GformGetFormFilterTest extends WP_UnitTestCase {
 		$this->assertSame( $expected, $actual );
 	}
 
+	/**
+	 * @covers Gravity_Forms_Multiple_Form_Instances::gform_get_form_filter
+	 */
+	public function testForInputReplacement() {
+		$input = "for='input_" . $this->form['id'] . '_';
+		$expected = "for='input_" . $this->randomId . '_';
+		$actual = $this->gfmfi->gform_get_form_filter( $input, $this->form );
+
+		$this->assertSame( $expected, $actual );
+	}
+
+	/**
+	 * @covers Gravity_Forms_Multiple_Form_Instances::gform_get_form_filter
+	 */
+	public function testIdInputReplacement() {
+		$input = "id='input_" . $this->form['id'] . '_';
+		$expected = "id='input_" . $this->randomId . '_';
+		$actual = $this->gfmfi->gform_get_form_filter( $input, $this->form );
+
+		$this->assertSame( $expected, $actual );
+	}
+
+	/**
+	 * @covers Gravity_Forms_Multiple_Form_Instances::gform_get_form_filter
+	 */
+	public function testGformSubmitButtonReplacement() {
+		$input = "'gform_submit_button_" . $this->form['id'] . "'";
+		$expected = "'gform_submit_button_" . $this->randomId . "'";
+		$actual = $this->gfmfi->gform_get_form_filter( $input, $this->form );
+
+		$this->assertSame( $expected, $actual );
+	}
+
+	/**
+	 * @covers Gravity_Forms_Multiple_Form_Instances::gform_get_form_filter
+	 */
+	public function testGfSubmittingDoubleQuoteReplacement() {
+		$input = '"gf_submitting_' . $this->form['id'] . '"';
+		$expected = '"gf_submitting_' . $this->randomId . '"';
+		$actual = $this->gfmfi->gform_get_form_filter( $input, $this->form );
+
+		$this->assertSame( $expected, $actual );
+	}
+
+	/**
+	 * @covers Gravity_Forms_Multiple_Form_Instances::gform_get_form_filter
+	 */
+	public function testGfSubmittingSingleQuoteReplacement() {
+		$input = "'gf_submitting_" . $this->form['id'] . "'";
+		$expected = "'gf_submitting_" . $this->randomId . "'";
+		$actual = $this->gfmfi->gform_get_form_filter( $input, $this->form );
+
+		$this->assertSame( $expected, $actual );
+	}
+
 }
