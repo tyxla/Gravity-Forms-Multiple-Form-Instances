@@ -368,4 +368,59 @@ class GFMFI_GformGetFormFilterTest extends WP_UnitTestCase {
 		$this->assertSame( $expected, $actual );
 	}
 
+	/**
+	 * @covers Gravity_Forms_Multiple_Form_Instances::gform_get_form_filter
+	 */
+	public function testGformsCalendarIconInput() {
+		$input = 'gforms_calendar_icon_input_' . $this->form['id'] . '_';
+		$expected = 'gforms_calendar_icon_input_' . $this->randomId . '_';
+		$actual = $this->gfmfi->gform_get_form_filter( $input, $this->form );
+
+		$this->assertSame( $expected, $actual );
+	}
+
+	/**
+	 * @covers Gravity_Forms_Multiple_Form_Instances::gform_get_form_filter
+	 */
+	public function testIdGinputQuantity() {
+		$input = "id='ginput_quantity_" . $this->form['id'] . '_';
+		$expected = "id='ginput_quantity_" . $this->randomId . '_';
+		$actual = $this->gfmfi->gform_get_form_filter( $input, $this->form );
+
+		$this->assertSame( $expected, $actual );
+	}
+
+	/**
+	 * @covers Gravity_Forms_Multiple_Form_Instances::gform_get_form_filter
+	 */
+	public function testGfieldPrice() {
+		$input = 'gfield_price_' . $this->form['id'] . '_';
+		$expected = 'gfield_price_' . $this->randomId . '_';
+		$actual = $this->gfmfi->gform_get_form_filter( $input, $this->form );
+
+		$this->assertSame( $expected, $actual );
+	}
+
+	/**
+	 * @covers Gravity_Forms_Multiple_Form_Instances::gform_get_form_filter
+	 */
+	public function testGfieldQuantity() {
+		$input = 'gfield_quantity_' . $this->form['id'] . '_';
+		$expected = 'gfield_quantity_' . $this->randomId . '_';
+		$actual = $this->gfmfi->gform_get_form_filter( $input, $this->form );
+
+		$this->assertSame( $expected, $actual );
+	}
+
+	/**
+	 * @covers Gravity_Forms_Multiple_Form_Instances::gform_get_form_filter
+	 */
+	public function testGfieldProduct() {
+		$input = 'gfield_product_' . $this->form['id'] . '_';
+		$expected = 'gfield_product_' . $this->randomId . '_';
+		$actual = $this->gfmfi->gform_get_form_filter( $input, $this->form );
+
+		$this->assertSame( $expected, $actual );
+	}
+
 }
