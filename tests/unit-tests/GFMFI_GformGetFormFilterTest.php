@@ -181,4 +181,81 @@ class GFMFI_GformGetFormFilterTest extends WP_UnitTestCase {
 		$this->assertSame( $expected, $actual );
 	}
 
+	/**
+	 * @covers Gravity_Forms_Multiple_Form_Instances::gform_get_form_filter
+	 */
+	public function testHashGformAjaxFrameReplacement() {
+		$input = '#gform_ajax_frame_' . $this->form['id'];
+		$expected = '#gform_ajax_frame_' . $this->randomId;
+		$actual = $this->gfmfi->gform_get_form_filter( $input, $this->form );
+
+		$this->assertSame( $expected, $actual );
+	}
+
+	/**
+	 * @covers Gravity_Forms_Multiple_Form_Instances::gform_get_form_filter
+	 */
+	public function testHashGformWrapperReplacement() {
+		$input = '#gform_wrapper_' . $this->form['id'];
+		$expected = '#gform_wrapper_' . $this->randomId;
+		$actual = $this->gfmfi->gform_get_form_filter( $input, $this->form );
+
+		$this->assertSame( $expected, $actual );
+	}
+
+	/**
+	 * @covers Gravity_Forms_Multiple_Form_Instances::gform_get_form_filter
+	 */
+	public function testHashGformReplacement() {
+		$input = '#gform_' . $this->form['id'];
+		$expected = '#gform_' . $this->randomId;
+		$actual = $this->gfmfi->gform_get_form_filter( $input, $this->form );
+
+		$this->assertSame( $expected, $actual );
+	}
+
+	/**
+	 * @covers Gravity_Forms_Multiple_Form_Instances::gform_get_form_filter
+	 */
+	public function testTriggerGformPostRenderReplacement() {
+		$input = "trigger('gform_post_render', [" . $this->form['id'];
+		$expected = "trigger('gform_post_render', [" . $this->randomId;
+		$actual = $this->gfmfi->gform_get_form_filter( $input, $this->form );
+
+		$this->assertSame( $expected, $actual );
+	}
+
+	/**
+	 * @covers Gravity_Forms_Multiple_Form_Instances::gform_get_form_filter
+	 */
+	public function testGformInitSpinner() {
+		$input = 'gformInitSpinner( ' . $this->form['id'] . ',';
+		$expected = 'gformInitSpinner( ' . $this->randomId . ',';
+		$actual = $this->gfmfi->gform_get_form_filter( $input, $this->form );
+
+		$this->assertSame( $expected, $actual );
+	}
+
+	/**
+	 * @covers Gravity_Forms_Multiple_Form_Instances::gform_get_form_filter
+	 */
+	public function testTriggerGformPageLoadedReplacement() {
+		$input = "trigger('gform_page_loaded', [" . $this->form['id'];
+		$expected = "trigger('gform_page_loaded', [" . $this->randomId;
+		$actual = $this->gfmfi->gform_get_form_filter( $input, $this->form );
+
+		$this->assertSame( $expected, $actual );
+	}
+
+	/**
+	 * @covers Gravity_Forms_Multiple_Form_Instances::gform_get_form_filter
+	 */
+	public function testGformConfirmationLoaded() {
+		$input = "'gform_confirmation_loaded', [" . $this->form['id'] . ']';
+		$expected = "'gform_confirmation_loaded', [" . $this->randomId . ']';
+		$actual = $this->gfmfi->gform_get_form_filter( $input, $this->form );
+
+		$this->assertSame( $expected, $actual );
+	}
+
 }
