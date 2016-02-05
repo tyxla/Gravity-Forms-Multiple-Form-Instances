@@ -2,8 +2,8 @@
 Contributors: tyxla
 Tags: gravity, form, multiple, gravity forms
 Requires at least: 3.0.1
-Tested up to: 4.4.1
-Stable tag: 1.0.15
+Tested up to: 4.4.2
+Stable tag: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -24,6 +24,15 @@ This plugin addresses this issue, allowing multiple forms to be displayed on the
 1. That's it. You're ready to go!
 
 == Changelog ==
+
+= 1.1 =
+Integrated custom CSS class, containing the original form ID for easy styling.
+Integrated a tests framework.
+Added a complete set of unit tests to reach 98% test coverage.
+Improved code and made it compatible with the WordPress Coding Standards.
+Minor replacement fix.
+Readme improvements.
+Integrated Travis CI and Scrutinizer CI.
 
 = 1.0.15 =
 Added support for the page "Next" button conditional logic.
