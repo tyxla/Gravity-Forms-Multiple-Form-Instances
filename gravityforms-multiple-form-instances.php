@@ -52,6 +52,7 @@ class Gravity_Forms_Multiple_Form_Instances {
 
 		// define all occurences of the original form ID that wont hurt the form input
 		$strings = array(
+			' gform_wrapper '                                                   => ' gform_wrapper gform_wrapper_original_id_' . $form['id'] . ' ',
 			"for='choice_"                                                      => "for='choice_" . $random_id . '_',
 			"id='choice_"                                                       => "id='choice_" . $random_id . '_',
 			"id='label_"                                                        => "id='label_" . $random_id . '_',
