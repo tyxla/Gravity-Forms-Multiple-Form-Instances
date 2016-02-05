@@ -24,6 +24,17 @@ class GFMFI_GformGetFormFilterTest extends WP_UnitTestCase {
 	/**
 	 * @covers Gravity_Forms_Multiple_Form_Instances::gform_get_form_filter
 	 */
+	public function testOriginalFormIdAddition() {
+		$input = ' gform_wrapper ';
+		$expected = ' gform_wrapper gform_wrapper_original_id_' . $this->form['id'] . ' ';
+		$actual = $this->gfmfi->gform_get_form_filter( $input, $this->form );
+
+		$this->assertSame( $expected, $actual );
+	}
+
+	/**
+	 * @covers Gravity_Forms_Multiple_Form_Instances::gform_get_form_filter
+	 */
 	public function testForChoiceReplacement() {
 		$input = "<label for='choice_123'>";
 		$expected = "<label for='choice_" . $this->randomId . "_123'>";
