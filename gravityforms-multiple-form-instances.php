@@ -54,7 +54,6 @@ class Gravity_Forms_Multiple_Form_Instances {
 		$strings = array(
 			' gform_wrapper '                                                   => ' gform_wrapper gform_wrapper_original_id_' . $form['id'] . ' ',
 			"for='choice_"                                                      => "for='choice_" . $random_id . '_',
-			"id='choice_"                                                       => "id='choice_" . $random_id . '_',
 			"id='label_"                                                        => "id='label_" . $random_id . '_',
 			"'gform_wrapper_" . $form['id'] . "'"                               => "'gform_wrapper_" . $random_id . "'",
 			"'gf_" . $form['id'] . "'"                                          => "'gf_" . $random_id . "'",
@@ -64,6 +63,7 @@ class Gravity_Forms_Multiple_Form_Instances {
 			"'gform_fields_" . $form['id'] . "'"                                => "'gform_fields_" . $random_id . "'",
 			"id='field_" . $form['id'] . '_'                                    => "id='field_" . $random_id . '_',
 			"for='input_" . $form['id'] . '_'                                   => "for='input_" . $random_id . '_',
+			"id='choice_" . $form['id'] . '_'                                   => "id='choice_" . $random_id . '_',
 			"id='input_" . $form['id'] . '_'                                    => "id='input_" . $random_id . '_',
 			"'gform_submit_button_" . $form['id'] . "'"                         => "'gform_submit_button_" . $random_id . "'",
 			'"gf_submitting_' . $form['id'] . '"'                               => '"gf_submitting_' . $random_id . '"',
