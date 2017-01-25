@@ -99,7 +99,7 @@ class Gravity_Forms_Multiple_Form_Instances {
 		);
 
 		// allow addons & plugins to add additional find & replace strings
-		$strings = apply_filters( 'gform_multiple_instances_strings', $strings );
+		$strings = apply_filters( 'gform_multiple_instances_strings', $strings, $form['id'], $random_id );
 
 		// replace all occurences with the new unique ID
 		foreach ( $strings as $find => $replace ) {
