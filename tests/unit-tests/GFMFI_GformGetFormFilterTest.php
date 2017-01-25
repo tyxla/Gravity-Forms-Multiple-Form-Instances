@@ -509,7 +509,7 @@ class GFMFI_GformGetFormFilterTest extends WP_UnitTestCase {
 	 * @covers Gravity_Forms_Multiple_Form_Instances::gform_get_form_filter
 	 */
 	public function testGformMultipleInstancesStringsFilter() {
-		add_filter( 'gform_multiple_instances_strings', array($this, 'gform_multiple_instances_strings') );
+		add_filter( 'gform_multiple_instances_strings', array($this, 'gform_multiple_instances_strings'), 10, 3 );
 
 		$input = 'foo_' . $this->form['id'] . '_';
 		$expected = 'foo_' . $this->randomId . '_';
@@ -517,7 +517,7 @@ class GFMFI_GformGetFormFilterTest extends WP_UnitTestCase {
 
 		$this->assertSame( $expected, $actual );
 
-		remove_filter( 'gform_multiple_instances_strings', array($this, 'gform_multiple_instances_strings') );
+		remove_filter( 'gform_multiple_instances_strings', array($this, 'gform_multiple_instances_strings'), 10 );
 	}
 
 }
