@@ -157,7 +157,7 @@ class GFMFI_GformGetFormFilterTest extends WP_UnitTestCase {
 	 * @covers Gravity_Forms_Multiple_Form_Instances::gform_get_form_filter
 	 */
 	public function testIdChoiceReplacement() {
-		$input = "<label id='choice_' . $this->form['id'] . '_' >";
+		$input = "<label id='choice_" . $this->form['id'] . "_' >";
 		$expected = "<label id='choice_" . $this->randomId . "_'>";
 		$actual = $this->gfmfi->gform_get_form_filter( $input, $this->form );
 	
