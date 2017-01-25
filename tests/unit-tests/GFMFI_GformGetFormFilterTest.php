@@ -2,8 +2,8 @@
 
 class GFMFI_GformGetFormFilterTest extends WP_UnitTestCase {
 
-	public function gform_multiple_instances_strings( $strings ) {
-		$strings['fooBar'] = 'barFoo';
+	public function gform_multiple_instances_strings( $strings, $form_id, $random_id ) {
+		$strings['foo_' . $form_id . '_'] = 'foo_' . $random_id . '_';
 		return $strings;
 	}
 
@@ -511,8 +511,8 @@ class GFMFI_GformGetFormFilterTest extends WP_UnitTestCase {
 	public function testGformMultipleInstancesStringsFilter() {
 		add_filter( 'gform_multiple_instances_strings', array($this, 'gform_multiple_instances_strings') );
 
-		$input = "fooBar";
-		$expected = "barFoo";
+		$input = 'foo_' . $this->form['id'] . '_';
+		$expected = 'foo_' . $this->randomId . '_';
 		$actual = $this->gfmfi->gform_get_form_filter( $input, $this->form );
 
 		$this->assertSame( $expected, $actual );
