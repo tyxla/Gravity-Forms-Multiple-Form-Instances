@@ -46,17 +46,6 @@ class GFMFI_GformGetFormFilterTest extends WP_UnitTestCase {
 	/**
 	 * @covers Gravity_Forms_Multiple_Form_Instances::gform_get_form_filter
 	 */
-	public function testIdChoiceReplacement() {
-		$input = "<label id='choice_123'>";
-		$expected = "<label id='choice_" . $this->randomId . "_123'>";
-		$actual = $this->gfmfi->gform_get_form_filter( $input, $this->form );
-
-		$this->assertSame( $expected, $actual );
-	}
-
-	/**
-	 * @covers Gravity_Forms_Multiple_Form_Instances::gform_get_form_filter
-	 */
 	public function testIdLabelReplacement() {
 		$input = "<label id='label_123'>";
 		$expected = "<label id='label_" . $this->randomId . "_123'>";
@@ -164,6 +153,17 @@ class GFMFI_GformGetFormFilterTest extends WP_UnitTestCase {
 		$this->assertSame( $expected, $actual );
 	}
 
+	/**
+	 * @covers Gravity_Forms_Multiple_Form_Instances::gform_get_form_filter
+	 */
+	public function testIdChoiceReplacement() {
+		$input = "<label id='choice_" . $this->form['id'] . "_'>";
+		$expected = "<label id='choice_" . $this->randomId . "_'>";
+		$actual = $this->gfmfi->gform_get_form_filter( $input, $this->form );
+	
+		$this->assertSame( $expected, $actual );
+	}
+	
 	/**
 	 * @covers Gravity_Forms_Multiple_Form_Instances::gform_get_form_filter
 	 */
