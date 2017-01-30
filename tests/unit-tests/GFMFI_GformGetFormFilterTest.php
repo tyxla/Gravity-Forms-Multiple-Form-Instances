@@ -497,6 +497,94 @@ class GFMFI_GformGetFormFilterTest extends WP_UnitTestCase {
 	/**
 	 * @covers Gravity_Forms_Multiple_Form_Instances::gform_get_form_filter
 	 */
+	public function testMultipartParamsAddition() {
+		$input = 'multipart_params&quot;:{&quot;form_id&quot;';
+		$expected = 'multipart_params&quot;:{&quot;random_id&quot;:' . $this->randomId . ',&quot;form_id&quot;';
+		$actual = $this->gfmfi->gform_get_form_filter( $input, $this->form );
+
+		$this->assertSame( $expected, $actual );
+	}
+
+	/**
+	 * @covers Gravity_Forms_Multiple_Form_Instances::gform_get_form_filter
+	 */
+	public function testGformMultifileUploadReplacement() {
+		$input = 'gform_multifile_upload_' . $this->form['id'] . '_';
+		$expected = 'gform_multifile_upload_' . $this->randomId . '_';
+		$actual = $this->gfmfi->gform_get_form_filter( $input, $this->form );
+
+		$this->assertSame( $expected, $actual );
+	}
+
+	/**
+	 * @covers Gravity_Forms_Multiple_Form_Instances::gform_get_form_filter
+	 */
+	public function testGformDragDropAreaReplacement() {
+		$input = 'gform_drag_drop_area_' . $this->form['id'] . '_';
+		$expected = 'gform_drag_drop_area_' . $this->randomId . '_';
+		$actual = $this->gfmfi->gform_get_form_filter( $input, $this->form );
+
+		$this->assertSame( $expected, $actual );
+	}
+
+	/**
+	 * @covers Gravity_Forms_Multiple_Form_Instances::gform_get_form_filter
+	 */
+	public function testGformBrowseButtonReplacement() {
+		$input = 'gform_browse_button_' . $this->form['id'] . '_';
+		$expected = 'gform_browse_button_' . $this->randomId . '_';
+		$actual = $this->gfmfi->gform_get_form_filter( $input, $this->form );
+
+		$this->assertSame( $expected, $actual );
+	}
+
+	/**
+	 * @covers Gravity_Forms_Multiple_Form_Instances::gform_get_form_filter
+	 */
+	public function testGformPreviewReplacement() {
+		$input = 'gform_preview_' . $this->form['id'] . '_';
+		$expected = 'gform_preview_' . $this->randomId . '_';
+		$actual = $this->gfmfi->gform_get_form_filter( $input, $this->form );
+
+		$this->assertSame( $expected, $actual );
+	}
+
+	/**
+	 * @covers Gravity_Forms_Multiple_Form_Instances::gform_get_form_filter
+	 */
+	public function testGformMultifileMessagesReplacement() {
+		$input = 'gform_multifile_messages_' . $this->form['id'] . '_';
+		$expected = 'gform_multifile_messages_' . $this->randomId . '_';
+		$actual = $this->gfmfi->gform_get_form_filter( $input, $this->form );
+
+		$this->assertSame( $expected, $actual );
+	}
+
+	/**
+	 * @covers Gravity_Forms_Multiple_Form_Instances::gform_get_form_filter
+	 */
+	public function testGformUploadedFilesReplacement() {
+		$input = 'gform_uploaded_files_' . $this->form['id'] . '_';
+		$expected = 'gform_uploaded_files_' . $this->randomId . '_';
+		$actual = $this->gfmfi->gform_get_form_filter( $input, $this->form );
+
+		$this->assertSame( $expected, $actual );
+	}
+
+	/**
+	 * @covers Gravity_Forms_Multiple_Form_Instances::gform_get_form_filter
+	 */
+	public function testGformDeleteUploadedFileReplacement() {
+		$input = 'gformDeleteUploadedFile(' . $this->form['id'] . ',';
+		$expected = 'gformDeleteUploadedFile(' . $this->randomId . ',';
+		$actual = $this->gfmfi->gform_get_form_filter( $input, $this->form );
+
+		$this->assertSame( $expected, $actual );
+	}
+
+	/**
+	 * @covers Gravity_Forms_Multiple_Form_Instances::gform_get_form_filter
+	 */
 	public function testHiddenFieldAddition() {
 		$input = "<input type='hidden' name='gform_field_values'";
 		$expected = "<input type='hidden' name='gform_random_id' value='" . $this->randomId . "' />" . $input;
