@@ -38,6 +38,10 @@ Additionally, the plugin offers the following actions & filters:
 
 ##### gform\_multiple\_instances\_strings
 
-**$strings** *(array)*. An array of find => replace pairs. Occurences of "key" will be replaced with the corresponding "value".
+**$strings**   *(array)*. An array of find => replace pairs. Occurences of "key" will be replaced with the corresponding "value".
+
+**$form_id**   *(int)*.   The original form id.
+
+**$random_id** *(int)*.   The new, randomly generated form id.
 
 This filter allows you to modify the default strings that will be replaced. The keys are the original strings, and the corresponding values are the strings that keys will be replaced with.
