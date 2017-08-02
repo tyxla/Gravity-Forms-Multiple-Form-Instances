@@ -18,7 +18,7 @@ class Gravity_Forms_Multiple_Form_Instances {
 
 	/**
 	 * Constructor.
-	 *	
+	 *
 	 * Used to initialize the plugin and hook the related functionality.
 	 *
 	 * @access public
@@ -30,7 +30,7 @@ class Gravity_Forms_Multiple_Form_Instances {
 
 	/**
 	 * Replaces all occurences of the form ID with a new, unique ID.
-	 *	
+	 *
 	 * This is where the magic happens.
 	 *
 	 * @access public
@@ -44,7 +44,7 @@ class Gravity_Forms_Multiple_Form_Instances {
 		if ( isset( $_POST['gform_random_id'] ) ) {
 			$random_id = absint( $_POST['gform_random_id'] ); // Input var okay.
 		} else {
-			$random_id = mt_rand();	
+			$random_id = mt_rand();
 		}
 
 		// this is where we keep our unique ID
@@ -52,7 +52,7 @@ class Gravity_Forms_Multiple_Form_Instances {
 
 		// define all occurences of the original form ID that wont hurt the form input
 		$strings = array(
-			' gform_wrapper '                                                   => ' gform_wrapper gform_wrapper_original_id_' . $form['id'] . ' ',
+			' gform_wrapper'                                                   => ' gform_wrapper gform_wrapper_original_id_' . $form['id'],
 			"for='choice_"                                                      => "for='choice_" . $random_id . '_',
 			"id='label_"                                                        => "id='label_" . $random_id . '_',
 			"'gform_wrapper_" . $form['id'] . "'"                               => "'gform_wrapper_" . $random_id . "'",
