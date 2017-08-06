@@ -26,6 +26,8 @@ class Gravity_Forms_Multiple_Form_Instances {
 	public function __construct() {
 		// hook the HTML ID string find & replace functionality
 		add_filter( 'gform_get_form_filter', array( $this, 'gform_get_form_filter' ), 10, 2 );
+		// hook the multifile upload script replace functionality
+		add_filter( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 	}
 
 	/**
@@ -95,6 +97,14 @@ class Gravity_Forms_Multiple_Form_Instances {
 			'GFCalc(' . $form['id'] . ','                                       => 'GFCalc(' . $random_id . ',',
 			'gf_global["number_formats"][' . $form['id'] . ']'                  => 'gf_global["number_formats"][' . $random_id . ']',
 			'gform_next_button_' . $form['id'] . '_'                            => 'gform_next_button_' . $random_id . '_',
+			'multipart_params&quot;:{&quot;form_id&quot;:' . $form['id'] . ','  => 'multipart_params&quot;:{&quot;form_id&quot;:' . $random_id . ',&quot;original_id&quot;:' . $form['id'] . ',&quot;random_id&quot;:' . $random_id . ',',
+			'gform_multifile_upload_' . $form['id'] . '_'                       => 'gform_multifile_upload_' . $random_id . '_',
+			'gform_drag_drop_area_' . $form['id'] . '_'                         => 'gform_drag_drop_area_' . $random_id . '_',
+			'gform_browse_button_' . $form['id'] . '_'                          => 'gform_browse_button_' . $random_id . '_',
+			'gform_preview_' . $form['id'] . '_'                                => 'gform_preview_' . $random_id . '_',
+			'gform_multifile_messages_' . $form['id'] . '_'                     => 'gform_multifile_messages_' . $random_id . '_',
+			'gform_uploaded_files_' . $form['id']                               => 'gform_uploaded_files_' . $random_id,
+			'gformDeleteUploadedFile(' . $form['id'] . ','                      => 'gformDeleteUploadedFile(' . $random_id . ',',
 			$hidden_field                                                       => "<input type='hidden' name='gform_random_id' value='" . $random_id . "' />" . $hidden_field,
 		);
 
@@ -107,6 +117,17 @@ class Gravity_Forms_Multiple_Form_Instances {
 		}
 
 		return $form_string;
+	}
+
+	/**
+	 * Enqueues the multifile upload script in wordpress scripts.
+	 *
+	 * @access public
+	 *
+	 * @return void
+	 */
+	public function enqueue_scripts() {
+		wp_enqueue_script( 'gform_mfi_multifile', plugin_dir_url( __FILE__ ) . 'js/gravityforms-mfi-multifile.js', array( 'jquery', 'gform_gravityforms' ) );
 	}
 
 }
