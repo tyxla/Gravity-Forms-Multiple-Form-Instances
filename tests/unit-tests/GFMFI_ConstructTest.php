@@ -19,4 +19,13 @@ class GFMFI_ConstructTest extends WP_UnitTestCase {
 		$this->assertSame( 10, has_filter( 'gform_get_form_filter', array( $this->gfmfi, 'gform_get_form_filter' ) ) );
 	}
 
+	/**
+	 * @covers Gravity_Forms_Multiple_Form_Instances::__construct
+	 */
+	public function testHookGformConfirmationRegistered() {
+		$this->gfmfi->__construct();
+
+		$this->assertSame( 10, has_filter( 'gform_confirmation', array( $this->gfmfi, 'gform_get_form_filter' ) ) );
+	}
+
 }
