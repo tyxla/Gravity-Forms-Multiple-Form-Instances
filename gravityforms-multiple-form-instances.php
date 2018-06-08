@@ -137,7 +137,7 @@ class Gravity_Forms_Multiple_Form_Instances {
 			'GFCalc(' . $form['id'] . ','                                       => 'GFCalc(' . $random_id . ',',
 			'gf_global["number_formats"][' . $form['id'] . ']'                  => 'gf_global["number_formats"][' . $random_id . ']',
 			'gform_next_button_' . $form['id'] . '_'                            => 'gform_next_button_' . $random_id . '_',
-			$hidden_field                                                       => "<input type='hidden' name='gform_instance_count' value='" . $this->instance_counts[ $form['id'] ] . "' /><input type='hidden' name='gform_original_id' value='" . $form['id'] . "' /><input type='hidden' name='gform_random_id' value='" . $random_id . "' />" . $hidden_field,
+			$hidden_field                                                       => "<input type='hidden' name='gform_instance_count' value='" . $instance_number . "' /><input type='hidden' name='gform_original_id' value='" . $form['id'] . "' /><input type='hidden' name='gform_random_id' value='" . $random_id . "' />" . $hidden_field,
 		);
 
 		// allow addons & plugins to add additional find & replace strings
