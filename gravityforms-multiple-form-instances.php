@@ -16,6 +16,8 @@
  */
 class Gravity_Forms_Multiple_Form_Instances {
 
+	private $instance_count = Array();
+
 	/**
 	 * Constructor.
 	 *
@@ -41,10 +43,49 @@ class Gravity_Forms_Multiple_Form_Instances {
 	 * @return string $form_string The modified form HTML string.
 	 */
 	public function gform_get_form_filter( $form_string, $form ) {
-		// if form has been submitted, use the submitted ID, otherwise generate a new unique ID
-		if ( isset( $_POST['gform_random_id'] ) ) {
-			$random_id = absint( $_POST['gform_random_id'] ); // Input var okay.
+		
+		global $_POST;
+
+		$random_id = null;
+
+		//	Keep track of the instance number for each form type 
+		if (!array_key_exists($form['id'], $this->instance_count)) {
+			$this->instance_count[ $form['id'] ] = 1;
 		} else {
+			$this->instance_count[ $form['id'] ] = $this->instance_count[ $form['id'] ] + 1;
+		}
+
+		//	Get the instance number for this particular form 
+		$instance_number = $this->instance_count[ $form['id'] ];
+
+		//	Are we processing after a form has just been submitted?
+		if ( isset( $_POST['gform_random_id'] )) {
+
+			//	Is it of the same type as the form we're currently modifying? 
+			if ((isset( $_POST['gform_original_id'] ) && $_POST['gform_original_id'] == $form['id'] )) {
+
+				//	Is it an ajax submission? 
+				if (array_key_exists('gform_ajax', $_POST)) {
+
+					//	Yes, use the previous random ID
+					$random_id = absint( $_POST['gform_random_id'] );
+
+					//	Also use the previous instance ID
+					$instance_number = absint( $_POST['gform_instance_number'] );
+				}
+				
+				//	Is it the same instance of the form?
+				else if (isset( $_POST['gform_instance_number'] ) && $_POST['gform_instance_number'] == $instance_number ) {
+
+					//	Yes, use the previous random ID
+					$random_id = absint( $_POST['gform_random_id'] );
+				
+				}
+			}
+		}
+
+		//	Otherwise generate a new unique ID
+		if (!$random_id) {
 			$random_id = mt_rand();
 		}
 
@@ -96,7 +137,7 @@ class Gravity_Forms_Multiple_Form_Instances {
 			'GFCalc(' . $form['id'] . ','                                       => 'GFCalc(' . $random_id . ',',
 			'gf_global["number_formats"][' . $form['id'] . ']'                  => 'gf_global["number_formats"][' . $random_id . ']',
 			'gform_next_button_' . $form['id'] . '_'                            => 'gform_next_button_' . $random_id . '_',
-			$hidden_field                                                       => "<input type='hidden' name='gform_random_id' value='" . $random_id . "' />" . $hidden_field,
+			$hidden_field                                                       => "<input type='hidden' name='gform_instance_count' value='" . $instance_number . "' /><input type='hidden' name='gform_original_id' value='" . $form['id'] . "' /><input type='hidden' name='gform_random_id' value='" . $random_id . "' />" . $hidden_field,
 		);
 
 		// allow addons & plugins to add additional find & replace strings
