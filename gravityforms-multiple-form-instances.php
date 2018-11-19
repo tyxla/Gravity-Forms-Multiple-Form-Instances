@@ -15,6 +15,10 @@
  * The main plugin class.
  */
 class Gravity_Forms_Multiple_Form_Instances {
+	/**
+	 * array $previous_forms track the previous forms so we know if we need to change the id
+	 */
+	protected $previous_forms = [];
 
 	/**
 	 * Constructor.
@@ -44,6 +48,12 @@ class Gravity_Forms_Multiple_Form_Instances {
 		// if form has been submitted, use the submitted ID, otherwise generate a new unique ID
 		if ( isset( $_POST['gform_random_id'] ) ) {
 			$random_id = absint( $_POST['gform_random_id'] ); // Input var okay.
+		} elseif ( !in_array($form['id'], $this->previous_forms) ) {
+			// if this is the first time we are seeing this form id then don't change the id
+			// this allows for add-ons like Stripe to still work since their JS depends on
+			// the form id.
+			$random_id = $form['id'];
+			array_push($this->previous_forms, $form['id']);
 		} else {
 			$random_id = mt_rand();
 		}
@@ -96,6 +106,8 @@ class Gravity_Forms_Multiple_Form_Instances {
 			'GFCalc(' . $form['id'] . ','                                       => 'GFCalc(' . $random_id . ',',
 			'gf_global["number_formats"][' . $form['id'] . ']'                  => 'gf_global["number_formats"][' . $random_id . ']',
 			'gform_next_button_' . $form['id'] . '_'                            => 'gform_next_button_' . $random_id . '_',
+			'gform_source_page_number_' . $form['id']                           => 'gform_source_page_number_' . $random_id,
+			'gform_target_page_number_' . $form['id']                           => 'gform_target_page_number_' . $random_id,
 			$hidden_field                                                       => "<input type='hidden' name='gform_random_id' value='" . $random_id . "' />" . $hidden_field,
 		);
 
