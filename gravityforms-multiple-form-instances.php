@@ -56,6 +56,7 @@ class Gravity_Forms_Multiple_Form_Instances {
 			' gform_wrapper'                                                   => ' gform_wrapper gform_wrapper_original_id_' . $form['id'],
 			"for='choice_"                                                      => "for='choice_" . $random_id . '_',
 			"id='label_"                                                        => "id='label_" . $random_id . '_',
+			"id='choice_"                                                       => "id='choice_" . $random_id . '_',
 			"'gform_wrapper_" . $form['id'] . "'"                               => "'gform_wrapper_" . $random_id . "'",
 			"'gf_" . $form['id'] . "'"                                          => "'gf_" . $random_id . "'",
 			"'gform_" . $form['id'] . "'"                                       => "'gform_" . $random_id . "'",
