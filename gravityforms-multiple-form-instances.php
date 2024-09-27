@@ -67,6 +67,7 @@ class Gravity_Forms_Multiple_Form_Instances {
 			"id='input_" . $form['id'] . '_'                                    => "id='input_" . $random_id . '_',
 			"id='choice_" . $form['id'] . '_'                                   => "id='choice_" . $random_id . '_',
 			"'gform_submit_button_" . $form['id'] . "'"                         => "'gform_submit_button_" . $random_id . "'",
+			"\"gform_submit_button_" . $form['id'] . "\""                         => "\"gform_submit_button_" . $random_id . "\"",
 			'"gf_submitting_' . $form['id'] . '"'                               => '"gf_submitting_' . $random_id . '"',
 			"'gf_submitting_" . $form['id'] . "'"                               => "'gf_submitting_" . $random_id . "'",
 			'#gform_ajax_frame_' . $form['id']                                  => '#gform_ajax_frame_' . $random_id,
